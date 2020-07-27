@@ -45,3 +45,4 @@ yarn.lock
 .firebaserc
 firebase.json
 .fuse_hidden*
+/firebase-debug.log

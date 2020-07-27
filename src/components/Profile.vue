@@ -2,7 +2,7 @@
 	<section class="row justify-center">
 		<q-card class="q-mt-lg" flat>
 			<q-card-section class="text-center">
-				<q-img src="images/me.jpg" alt="" class="custom-image shadow-22">
+				<q-img :src="currentUser.photoURL || 'images/me.jpg'" alt="eventms" class="custom-image shadow-22">
 					<template v-slot:loading>
 						<q-spinner-tail :color="$colors.blue[10]"/>
 					</template>
@@ -12,10 +12,10 @@
 
 			<q-card-section class="q-pt-none text-center ">
 				<div class="text-h6  text-grey-8">
-					Minhaz Ahamed Rifat
+					{{currentUser.displayName}}
 				</div>
 				<div class="text-caption text-grey-8">
-					Software Engineer
+					{{currentUser.email}}
 				</div>
 			</q-card-section>
 
@@ -30,6 +30,7 @@
 
 <script lang='ts'>
 	import {Component, Vue} from "vue-property-decorator";
+	import {auth} from "firebase";
 
 	@Component
 	export default class Profile extends Vue {
@@ -44,6 +45,13 @@
 
 		goFacebook() {
 			window.open("https://www.facebook.com/mma.rifat6", "_blank");
+		}
+
+		currentUser: firebase.User | null = null
+
+		created() {
+			this.currentUser = auth().currentUser
+			console.log(this.currentUser);
 		}
 
 
