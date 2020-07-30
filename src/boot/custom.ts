@@ -8,6 +8,29 @@ import firebase, {auth} from "firebase";
 import {IFileProperty} from "../../../server/src/interfaces/IFileProperty";
 import {ILogin} from "../../../server/src/interfaces/IEssentials";
 
+
+export function arrayRemove(arr: any[], value: any, field: string | any = null): any[] {
+	return arr.filter((ele) => {
+		if (field) {
+			return ele[field] != value[field];
+		} else {
+			return ele != value;
+		}
+	});
+}
+
+export function arrayMove(arr: any[], old_index: number, new_index: number = 0) {
+	if (new_index >= arr.length) {
+		let k = new_index - arr.length + 1;
+		while (k--) {
+			arr.push(undefined);
+		}
+	}
+	arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+	return arr;
+}
+
+
 export interface ICommon {
 	rules: {
 		required(value: any): boolean | string,

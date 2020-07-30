@@ -12,13 +12,23 @@
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
-$primary   : #1976D2;
-$secondary : #26A69A;
-$accent    : #9C27B0;
+$primary: #1B2942;
+$secondary: #607D8B;
+$accent: #1B2942de;
 
-$dark      : #1D1D1D;
+$dark: #1D1D1D;
 
-$positive  : #21BA45;
-$negative  : #C10015;
-$info      : #31CCEC;
-$warning   : #F2C037;
+$positive: #388E3C;
+$negative: #e53935;
+$info: #17a2b8;
+$warning: #ffc107;
+$light: #f8f9fa;
+
+$table-selected-background: #0f477e56;
+
+.q-item.q-router-link--active, .q-item--active {
+	color: #1565C0;
+}
+
+$generic-border-radius: 0;
+$button-border-radius: 0;

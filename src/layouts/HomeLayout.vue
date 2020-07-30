@@ -32,6 +32,12 @@
 					</q-item-section>
 					<q-item-section>PROFILE</q-item-section>
 				</q-item>
+				<q-item clickable v-ripple :to="{name: 'category'}" exact>
+					<q-item-section avatar>
+						<q-icon :color="$colors.blue[10]" name="category"/>
+					</q-item-section>
+					<q-item-section>Category</q-item-section>
+				</q-item>
 				<q-item clickable v-ripple exact @click="signOut">
 					<q-item-section avatar>
 						<q-icon :color="$colors.blue[10]" name="exit_to_app"/>

@@ -15,5 +15,301 @@
 	letter-spacing: 0.26667em;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.q-layout-padding {
+	@media (min-width: $breakpoint-sm-min) {
+		padding: 24px 10px !important;
+	}
+}
+
+input[type=number] {
+	-moz-appearance: textfield; /* Firefox */
+}
+
+// app global css in SCSS form
+p, h1, h2, h3, h4, h5, h6, ul {
+	margin: unset;
+	line-height: normal !important;
+}
+
+.cursor-default {
+	cursor: default;
+}
+
+.w-100 {
+	width: 100% !important;
+
+}
+
+.w-50 {
+	width: 50% !important;
+}
+
+.w-25 {
+	width: 25% !important;
+}
+
+
+.op-01 {
+	opacity: .1;
+}
+
+.op-02 {
+	opacity: .2;
+}
+
+.op-025 {
+	opacity: .25;
+}
+
+.op-03 {
+	opacity: .3;
+}
+
+.op-04 {
+	opacity: .4;
+}
+
+.op-05 {
+	opacity: .5;
+}
+
+
+.op-06 {
+	opacity: .6;
+}
+
+.op-07 {
+	opacity: .7;
+}
+
+.op-075 {
+	opacity: .75;
+}
+
+.op-08 {
+	opacity: .8;
+}
+
+.op-09 {
+	opacity: .9;
+}
+
+.op-1 {
+	opacity: 1;
+}
+
+.history-hover {
+	//font-size: small !important;
+	//max-width: 120px;
+	//width: 120px;
+	height: 24px;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap;
+	padding: 0 5px 0 0;
+
+	&:hover {
+		background-color: #404E67 !important;
+		opacity: 1;
+		//font-size: medium !important;
+		color: white !important;
+		padding: 0 5px;
+
+		i {
+			color: $light !important;
+		}
+	}
+
+	&:disabled {
+		color: white !important;
+		font-weight: bold;
+		cursor: unset !important;
+		font-size: smaller !important;
+
+		i {
+			color: $info !important;
+		}
+	}
+
+	i {
+		color: $positive !important;
+	}
+}
+
+.q-page-menu {
+	background-color: #fafafa;
+}
+
+.q-breadcrumbs--last {
+	font-weight: bold;
+}
+
+.appBreadCrumbs {
+	.title-item {
+		margin-right: 5px;
+	}
+
+	& > div > div {
+		margin: 0 0 0 2px;
+
+		i {
+			margin-right: 4px;
+		}
+	}
+
+	//box-shadow: 0 2px 2px $primary;
+}
+
+//login+register
+
+.pageBackground {
+	//background-image: radial-gradient(#BBDEFB, #90CAF9, #64B5F6);
+	//background-color: ;
+	background-image: url("/images/wallpaper-3.jpg");
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.imgBackground {
+	box-shadow: 0 0 10px 5px #9FCFCF;
+	//background: linear-gradient(0deg, #2196F3 25%, #0f477e 75%);
+
+}
+
+.q-tab__indicator {
+	height: 5px;
+}
+
+.q-tabs--vertical .q-tab__indicator {
+	width: 5px;
+}
+
+.q-page {
+	&.q-layout-padding.has-sticky {
+		@media (max-width: $breakpoint-sm-min) {
+			padding-top: 40px !important;
+		}
+		padding-top: 45px !important;
+		padding-bottom: 5px !important;
+	}
+
+	.q-page-sticky {
+		z-index: 9;
+	}
+}
+
+.full-tab {
+	.q-tab__content {
+		width: 100%;
+	}
+}
+
+
+.text-xx-large {
+	font-size: xx-large !important;
+}
+
+.text-x-large {
+	font-size: x-large !important;
+}
+
+.text-large {
+	font-size: large !important;
+}
+
+.text-medium {
+	font-size: medium !important;
+}
+
+.text-small {
+	font-size: small !important;
+}
+
+.text-x-small {
+	font-size: x-small !important;
+}
+
+.text-xx-small {
+	font-size: xx-small !important;
+}
+
+
+.small-fab {
+	& .q-btn__wrapper {
+		padding: unset !important;
+		min-height: unset !important;
+		min-width: unset !important;
+	}
+
+	.small-action {
+		padding: 2px;
+
+		i {
+			font-size: 20px;
+		}
+
+		.q-fab__label {
+			padding-left: unset !important;
+		}
+	}
+}
+
+.chips-amount {
+	font-size: 1.5rem;
+	@media (max-width: $breakpoint-xs-max) {
+		font-size: 1.25rem;
+	}
+}
+
+*::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 5px transparent;
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: $primary;
+}
+
+.t-sticky-header-column-table {
+
+	thead tr th:last-child, tbody tr td:last-child {
+		position: sticky;
+		right: 0;
+		background-color: $light;
+	}
+
+	thead tr th {
+		&.q-table--col-auto-width:first-child {
+			padding: unset !important;
+		}
+
+		z-index: 9;
+		position: sticky;
+		top: 0;
+		background-color: $light;
+	}
+}
+
+.text-semi-transparent {
+	background-color: #000E3CA6;
+	color: white;
+}
+
+
+
 
 
