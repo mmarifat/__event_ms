@@ -63,6 +63,7 @@
 	import {Component, Vue} from 'vue-property-decorator';
 	import {auth} from "firebase";
 	import {Loading} from "quasar";
+	import {logOut} from "boot/custom";
 
 	@Component
 	export default class MainLayout extends Vue {
@@ -70,15 +71,27 @@
 
 		signOut() {
 			Loading.show()
-			auth().signOut().then(() => {
-				this.$q.notify({
-					message: 'Logged Out!',
-					color: "negative",
-					icon: "info"
-				})
-			}).then(() => {
-				this.$store.commit('setUser', auth().currentUser)
-			}).then(() => {
+			new Promise(async () => {
+				try {
+					await logOut().then(() => {
+						this.$q.notify({
+							message: 'Logged Out!',
+							color: "negative",
+							icon: "info"
+						})
+						this.$store.commit('setUser', auth().currentUser)
+					})
+				} catch (error) {
+					this.$q.notify({
+						message: error.message,
+						caption: error.code,
+						type: this.$colors.negative
+					})
+					Loading.hide()
+				}
+			}).catch((error) => {
+				console.log(error);
+			}).finally(() => {
 				Loading.hide()
 			})
 		}

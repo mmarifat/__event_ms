@@ -2,7 +2,7 @@
 	<section class="row justify-center">
 		<q-card class="q-mt-lg" flat>
 			<q-card-section class="text-center">
-				<q-img :src="currentUser.photoURL || 'images/me.jpg'" alt="eventms" class="custom-image shadow-22">
+				<q-img :src=" currentUser.photoURL || 'images/me.jpg'" alt="" class="custom-image shadow-22">
 					<template v-slot:loading>
 						<q-spinner-tail :color="$colors.blue[10]"/>
 					</template>
@@ -47,13 +47,13 @@
 			window.open("https://www.facebook.com/mma.rifat6", "_blank");
 		}
 
+
 		currentUser: firebase.User | null = null
 
 		created() {
 			this.currentUser = auth().currentUser
 			console.log(this.currentUser);
 		}
-
 
 	}
 </script>

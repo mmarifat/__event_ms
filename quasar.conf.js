@@ -76,7 +76,7 @@ module.exports = configure(function (/* ctx */) {
 		devServer: {
 			clientLogLevel: "silent",
 			https: false,
-			port: 9999,
+			port: 9555,
 			open: true // opens browser window automatically
 		},
 

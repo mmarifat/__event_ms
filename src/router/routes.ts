@@ -43,6 +43,14 @@ const routes: RouteConfig[] = [
 			title: (route: Route) => 'Login',
 		}
 	}, {
+		path: '/signUp',
+		name: 'signUp',
+		component: () => import('components/core/SignUp.vue'),
+		meta: {
+			needAuth: false,
+			title: (route: Route) => 'Sign Up',
+		}
+	}, {
 		path: '/facebook',
 		name: 'facebook',
 		beforeEnter() {

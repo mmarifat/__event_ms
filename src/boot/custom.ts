@@ -5,8 +5,8 @@ import QCol from "components/core/QCol.vue";
 import QContainer from "components/core/QContainer.vue";
 import {copyToClipboard, date, Notify, SessionStorage} from "quasar";
 import firebase, {auth} from "firebase";
-import {IFileProperty} from "src/interfaces/IFileProperty";
-import {ILogin} from "src/interfaces/IEssentials";
+import {IFileProperty} from "../../../server/src/interfaces/IFileProperty";
+import {ILogin} from "../../../server/src/interfaces/IEssentials";
 
 export interface ICommon {
 	rules: {
@@ -744,7 +744,7 @@ export default boot(({Vue, app}: any) => {
 	Vue.prototype.$editor = editor
 });
 
-export async function signUp(info: ILogin) {
+export async function signUp(info: any) {
 	return new Promise((resolve, reject) => {
 		auth().createUserWithEmailAndPassword(info.email, info.password)
 			  .then((userCredential) => {
@@ -761,6 +761,14 @@ export async function signUp(info: ILogin) {
 export async function signIn(info: ILogin) {
 	return new Promise((resolve, reject) => {
 		auth().signInWithEmailAndPassword(info.email, info.password)
+			  .then((userCredential) => resolve(userCredential))
+			  .catch((reason) => reject(reason));
+	});
+}
+
+export async function logOut() {
+	return new Promise((resolve, reject) => {
+		auth().signOut()
 			  .then((userCredential) => resolve(userCredential))
 			  .catch((reason) => reject(reason));
 	});

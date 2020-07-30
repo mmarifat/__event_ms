@@ -1,6 +1,6 @@
 # Event Management System (EMS)
 
-A Event Management System App 
+An Event Management System App 
 
 ## Install the dependencies
 ```bash
