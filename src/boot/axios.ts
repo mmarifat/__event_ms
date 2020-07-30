@@ -14,7 +14,7 @@ declare module 'vue/types/vue' {
 const Axios = axios.create({
 	baseURL: process.env.API,
 	headers: {
-		'key': '5f22867a138ed47f287bc41d'
+		'key': '5f229702d4bffc941ecd5423'
 	}
 });
 Axios.interceptors.response.use(response => {

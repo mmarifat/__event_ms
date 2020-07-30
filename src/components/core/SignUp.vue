@@ -70,7 +70,7 @@
 
 		basicSignUp() {
 			Loading.show()
-			this.$axios.post('/signUp', this.login).then(async ({data}) => {
+			this.$axios.post('/dev/signUp', this.login).then(async ({data}) => {
 				if (data.isSuccess) {
 					this.$store.commit('setUser', auth().currentUser)
 					this.$root.$emit('showNotification', data)
