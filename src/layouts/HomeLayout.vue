@@ -1,3 +1,9 @@
+<!--
+  - Author mmarifat<mma.rifat66@gmail.com>
+  - Email: mma.rifat66@gmail.com
+  - Created on : Friday 31 Jul, 2020 12:43:48 BDT
+  -->
+
 <template>
 	<q-layout view="lHr lpR lfr" class="custom-background">
 		<q-header elevated class="custom-background text-indigo-10 text-uppercase">

@@ -1,8 +1,7 @@
 <!--
-  - Author S Brinta<brrinta@gmail.com>
-  - Email: brrinta@gmail.com
-  - Web: https://brinta.me
-  - Created on : Thursday 28 May, 2020 10:17:24 BDT
+  - Author mmarifat<mma.rifat66@gmail.com>
+  - Email: mma.rifat66@gmail.com
+  - Created on : Friday 31 Jul, 2020 12:42:43 BDT
   -->
 
 <template>

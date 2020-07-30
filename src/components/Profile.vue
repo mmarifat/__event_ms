@@ -1,3 +1,9 @@
+<!--
+  - Author mmarifat<mma.rifat66@gmail.com>
+  - Email: mma.rifat66@gmail.com
+  - Created on : Friday 31 Jul, 2020 12:43:16 BDT
+  -->
+
 <template>
 	<section class="row justify-center">
 		<q-card class="q-mt-lg" flat>

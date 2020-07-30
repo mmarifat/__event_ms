@@ -1,3 +1,9 @@
+/*
+ * Author mmarifat<mma.rifat66@gmail.com>
+ * Email: mma.rifat66@gmail.com
+ * Created on : Friday 31 Jul, 2020 12:44:38 BDT
+ */
+
 import axios from 'axios';
 import {boot} from 'quasar/wrappers';
 import {Notify, SessionStorage} from "app/node_modules/quasar";

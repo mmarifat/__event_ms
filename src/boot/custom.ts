@@ -1,3 +1,9 @@
+/*
+ * Author mmarifat<mma.rifat66@gmail.com>
+ * Email: mma.rifat66@gmail.com
+ * Created on : Friday 31 Jul, 2020 12:44:47 BDT
+ */
+
 import {boot} from "quasar/wrappers";
 import QColumn from "components/core/QColumn.vue";
 import QRow from "components/core/QRow.vue";

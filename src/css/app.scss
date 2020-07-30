@@ -289,6 +289,7 @@ p, h1, h2, h3, h4, h5, h6, ul {
 	thead tr th:last-child, tbody tr td:last-child {
 		position: sticky;
 		right: 0;
+		width: 20px;
 		background-color: $light;
 	}
 

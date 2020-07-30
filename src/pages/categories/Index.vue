@@ -48,12 +48,9 @@
 
 			<template v-slot:body-cell-image={row}>
 				<td>
-					<q-chip :color="$colors.lightBlue[3]" dense size="md">
-						<q-avatar>
-							<img :alt="row.image" :src="$common.getFileUrl(row.image)">
-						</q-avatar>
-						{{row.name}}
-					</q-chip>
+					<q-avatar size="lg">
+						<img :alt="row.image" :src="$common.getFileUrl(row.image)">
+					</q-avatar>
 				</td>
 			</template>
 
@@ -62,13 +59,13 @@
 					<q-expansion-item :default-opened="!$q.screen.xs" dense expand-icon-toggle header-class="text-bold text-subtitle1"
 					                  label="Search Options">
 						<q-row>
-							<q-select :options="fieldsOptions" class="col-6 col-md " clearable dense emit-value filled label="Search Fields"
+							<!--<q-select :options="fieldsOptions" class="col-6 col-md " clearable dense emit-value filled label="Search Fields"
 							          label-color="primary" map-options multiple use-chips v-model="filter.fields">
 								<template v-slot:selected-item="scope">
 									<q-chip :label="scope.opt.label" :tabindex="scope.tabindex" @remove="scope.removeAtIndex(scope.index)"
 									        class="q-my-none" dense removable/>
 								</template>
-							</q-select>
+							</q-select>-->
 							<q-input @keyup.enter="loadTable({})" class="col-6 col-md" clearable dense input-class="q-pl-sm"
 							         label="Search Text..."
 							         label-color="primary  q-pl-sm" v-model="filter.value">
@@ -79,7 +76,7 @@
 					</q-expansion-item>
 				</q-col>
 				<div class="q-table__control">
-					<q-btn :color="$colors.primary" @click="exportTable" icon="fa fa-file-excel" size="sm"/>
+					<q-btn :color="$colors.primary" @click="exportTable" icon="fa fa-file-excel" size="sm" :disable="selected.length < 1"/>
 				</div>
 				<div class="q-table__separator col xs-hide"/>
 				<div class="q-table__control col justify-end">
@@ -146,14 +143,10 @@
 		loading: boolean = false
 
 		mounted() {
-			this.$root.$on('createNewCategoryDone', () => {
+			this.$root.$on('newCategoryDone', () => {
 				this.loadTable()
 			})
 			this.$root.$on('editCategoryDone', () => {
-				this.loadTable()
-			})
-
-			this.$root.$on('AttachmentUploadCategoryDone', () => {
 				this.loadTable()
 			})
 		}
@@ -181,7 +174,7 @@
 					searchable: true,
 					type: undefined
 				}, {
-					label: 'Category Name',
+					label: 'Categories Name',
 					name: 'name',
 					field: 'name',
 					align: 'left',
@@ -235,7 +228,6 @@
 			}).then(({data}) => {
 				let response: IDataTableResponse = data.data
 				this.rows = response.rows
-				console.log(this.rows);
 				this.pagination.rowsNumber = response.filtered
 				this.dataTable.lastPage = Math.ceil(this.pagination.rowsNumber / this.rowsPerPage)
 				this.dataTable.totalItems = response.total

@@ -16,17 +16,11 @@ const routes: RouteConfig[] = [
 				}
 			}, {
 				path: '/category',
-				component: () => import('layouts/routes/Category.vue'),
-				children: [
-					{
-						path: '',
-						name: 'category',
-						component: () => import('pages/Categories/Index.vue'),
-						meta: {
-							title: (route: Route) => 'Categories',
-						}
-					}
-				]
+				name: 'category',
+				component: () => import('layouts/router/Category.vue'),
+				meta: {
+					title: (route: Route) => 'Categories',
+				}
 			}, {
 				path: '/profile',
 				name: 'profile',
