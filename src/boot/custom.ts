@@ -773,7 +773,7 @@ export default boot(({Vue, app}: any) => {
 	Vue.prototype.$editor = editor
 });
 
-export async function signUp(info: any) {
+/*export async function signUp(info: any) {
 	return new Promise((resolve, reject) => {
 		auth().createUserWithEmailAndPassword(info.email, info.password)
 			  .then((userCredential) => {
@@ -785,7 +785,7 @@ export async function signUp(info: any) {
 			  })
 			  .catch((reason) => reject(reason));
 	});
-}
+}*/
 
 export async function signIn(info: ILogin) {
 	return new Promise((resolve, reject) => {
