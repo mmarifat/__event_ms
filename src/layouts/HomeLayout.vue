@@ -44,6 +44,12 @@
 					</q-item-section>
 					<q-item-section>Category</q-item-section>
 				</q-item>
+				<q-item clickable v-ripple :to="{name: 'user'}" exact>
+					<q-item-section avatar>
+						<q-icon :color="$colors.blue[10]" name="people"/>
+					</q-item-section>
+					<q-item-section>User</q-item-section>
+				</q-item>
 				<q-item clickable v-ripple exact @click="signOut">
 					<q-item-section avatar>
 						<q-icon :color="$colors.blue[10]" name="exit_to_app"/>

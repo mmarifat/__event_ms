@@ -96,7 +96,7 @@ module.exports = configure(function (/* ctx */) {
 				'Notify', 'Dialog', 'LoadingBar', 'Loading', 'SessionStorage', 'LocalStorage', 'Meta'
 			],
 			config: {
-				loadingBar: {size: '10px', position: 'bottom'}
+				loadingBar: {size: '4px', position: 'bottom', color: 'yellow'}
 			},
 		},
 

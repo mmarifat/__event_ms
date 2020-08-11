@@ -22,6 +22,13 @@ const routes: RouteConfig[] = [
 					title: (route: Route) => 'Categories',
 				}
 			}, {
+				path: '/user',
+				name: 'user',
+				component: () => import('layouts/router/User.vue'),
+				meta: {
+					title: (route: Route) => 'Users',
+				}
+			}, {
 				path: '/profile',
 				name: 'profile',
 				component: () => import('components/Profile.vue'),

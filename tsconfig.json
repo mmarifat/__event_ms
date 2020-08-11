@@ -3,6 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "experimentalDecorators": true,
-    "target": "es5",
+    "allowJs": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "strictNullChecks": false
   }
 }

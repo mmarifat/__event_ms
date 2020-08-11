@@ -5,13 +5,19 @@
  */
 
 import {boot} from "quasar/wrappers";
-import {Loading} from "quasar";
+import {Loading, QSpinnerPuff} from "quasar";
 import {auth} from "firebase";
 import {Axios} from "boot/axios";
 
 export default boot(({router, store, app}: any) => {
 	router.beforeEach((to: any, from: any, next: any) => {
-		Loading.show()
+		Loading.show({
+			//@ts-ignore
+			spinner: QSpinnerPuff,
+			spinnerColor: 'primary',
+			spinnerSize: 250,
+			backgroundColor: 'transparent'
+		})
 		document.title = (to.meta && to.meta.title) ? to.meta.title(to) + " :: EVENT:MS" : 'EVENT:MS'
 		let parent = to.matched[0];
 		auth().onAuthStateChanged(user => {

@@ -186,7 +186,7 @@ export const common: ICommon = {
 			return reg.test(v) || 'Not a valid email!'
 		},
 		phone: (v: string) => {
-			let reg = /^((\+1)|1)? ?\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})( ?(ext\.? ?|x)(\d*))?$/;
+			let reg = /^([+]{1}[8]{2}|0088)?(01){1}[3-9]{1}\d{8}$/;
 			return !v.length || reg.test(v) || 'Not a valid Phone!'
 		},
 		notFraction: (v: any) => {

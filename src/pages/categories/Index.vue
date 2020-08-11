@@ -1,3 +1,9 @@
+<!--
+  - Author mmarifat<mma.rifat66@gmail.com>
+  - Email: mma.rifat66@gmail.com
+  - Created on : Friday 31 Jul, 2020 04:18:14 BDT
+  -->
+
 <template>
 	<section class="column justify-center">
 		<q-table :columns="columns" :data="rows" :hide-bottom="!!pagination.rowsNumber" :loading="loading" :pagination.sync="pagination"

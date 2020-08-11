@@ -8,9 +8,6 @@
 	<q-page class="has-sticky" padding>
 		<q-page-sticky position="top-right" expand class="full-width q-page-menu q-pa-sm">
 			<q-space v-if="$q.screen.gt.xs"/>
-			<q-btn :to="{name:'category'}" icon="home" :color="$colors.primary" :size="$q.screen.gt.sm ? 'md':'sm'" rounded push/>
-			<q-separator vertical color="white"/>
-			<q-separator vertical color="white"/>
 			<q-btn :color="$colors.primary" @click="$root.$emit('newCategoryModalOn')" icon="add" :size="$q.screen.gt.sm ? 'md':'sm'"
 			       rounded push :label="!$q.screen.xs ? 'New Category' : null"/>
 		</q-page-sticky>
